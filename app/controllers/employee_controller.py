@@ -4,8 +4,8 @@ from marshmallow import EXCLUDE
 from webargs.flaskparser import use_args
 
 from . import routes
-from app.schemas.employee_schema.employee_schema import EmployeeSchema, EmployeeUpdateSchema
-from app.services.employee_service.employee_service import EmployeeService
+from app.schemas.employee_schema import EmployeeSchema, EmployeeUpdateSchema
+from app.services.employee_service import EmployeeService
 from app.utils.exceptions import ValidationError, ResourceNotFound
 
 employee_service = EmployeeService()

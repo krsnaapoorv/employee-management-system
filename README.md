@@ -227,6 +227,24 @@ Set the header `Content-Type: application/json` for `POST` and `PUT` requests.
 | `422` | Request body failed schema validation |
 | `500` | Server error |
 
+## Running Tests
+
+Unit tests mock dependencies between layers:
+
+| File | Layer | Mocks |
+|------|-------|-------|
+| `tests/test_repository.py` | Repository | SQLAlchemy `db.session` and `Employee` |
+| `tests/test_service.py` | Service | `EmployeeRepository` |
+| `tests/test_controller.py` | Controller | `EmployeeService` |
+
+```bash
+pytest
+```
+
+```bash
+pytest -v
+```
+
 ## Troubleshooting
 
 | Issue | Solution |
